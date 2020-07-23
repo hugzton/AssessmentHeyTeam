@@ -3,6 +3,7 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
+* [Architecture](#Architecture)
 * [Setup](#setup)
 
 ## General info

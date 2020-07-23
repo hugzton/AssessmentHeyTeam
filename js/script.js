@@ -20,26 +20,34 @@ function initMap(values){
     return map
 }
 
-function handleColors(map){
+function handleGreen(map, limit){
     let occur = []
     for(var i = 0; i < map.length; i++){
       for(var j = 0; j < map[i].length ; j++){
-        if (countOccurrences(occur, map[i][j].value) < 2  &&  map[i][j].value > 100) {
+        if (countOccurrences(occur, map[i][j].value) < 2  &&  map[i][j].value > limit) {
           map[i][j].color = "green"
         }
         occur.push(map[i][j].value)
       }
     }
-    occur = []
+    return map
+}
+  
+function handleRed(map, limit) {
+    let occur = []
     for(var i = map.length - 1; i >= 0; i--){
       for(var j = 0; j < map[i].length; j++){
-        if (countOccurrences(occur, map[i][j].value) < 1  &&  map[i][j].value < 100) {
+        if (countOccurrences(occur, map[i][j].value) < 1  &&  map[i][j].value < limit) {
           map[i][j].color = "red"
         }
         occur.push(map[i][j].value)
       }
     }
     return map
+}
+  
+function handleColors(map){
+    return handleRed(handleGreen(map, 100), 100)
 }
 
 function createTable(values){

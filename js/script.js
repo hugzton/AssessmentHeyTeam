@@ -19,7 +19,7 @@ var values0 = [
  * @param {*} val 
  * Used to find the occurences of value(val) in array(arr), return 0 if not
  */
-const countOccurrences = (arr, val) => arr.reduce((a, currentValue) => (currentValue === val ? a + 1 : a), 0);
+const countOccurrences = (arr, val) => arr.reduce((a, currentValue) => (currentValue === val ? a + 1 : a), 0)
 
 /**
  * 
@@ -96,7 +96,7 @@ function handleColors(map){
  */
 function createTable(values){
     var body = document.body,
-        tbl  = document.createElement('table');
+        tbl  = document.createElement('table')
 
     values.forEach((column) => {
         var tr = tbl.insertRow()
@@ -106,8 +106,8 @@ function createTable(values){
           td.style.backgroundColor = item.color
         })
     })
-    body.appendChild(tbl);
+    body.appendChild(tbl)
 }
 
-let map = initMap(values);
-createTable(handleColors(map));
+let map = initMap(values)
+createTable(handleColors(map))
